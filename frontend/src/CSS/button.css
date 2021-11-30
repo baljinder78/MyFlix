@@ -1,0 +1,16 @@
+.button_text {
+    margin: 0;
+}
+
+.button_ {
+    background-color: var(--red);
+    border-radius: 2px;
+    width: 5em;
+    font-size: 1.2rem;
+    height: 2rem;
+    text-align: center;
+}
+
+.button_:hover {
+    background-color: var(--hv_red);
+}
