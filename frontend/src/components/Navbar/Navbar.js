@@ -1,21 +1,32 @@
-import React,{useState} from 'react'
+import React, { useState,useEffect } from 'react';
 import Button from '../Button/Button';
-import logo from "../../images/logo.png"
+import logo from '../../images/logo.png';
 import { Link } from 'react-router-dom';
 function Navbar() {
-  const [switchlogin,setSwitchlogin]=useState(false);
-    const signinclick = () => {
-      setSwitchlogin(true)
-    };
-    return (
-      <div className='w_upperbar'>
+  const [switchlogin, setSwitchlogin] = useState(true);
+  const [login,setLogin]=useState(true);
+  function random(){
+
+  }
+
+  return (
+    <div className='w_upperbar'>
+      <Link to='/'>
+        {' '}
         <img className='w_img' src={logo} alt='logo' />
+      </Link>
+
+      {login?<div>
         
-        <Link to="/sigin" >
-        <Button content='Sign In' handleevent={signinclick}/>
-        </Link>
       </div>
-    );
+      :switchlogin ? (
+        <Link to='/sigin'>
+          <Button content='Sign In' handleevent={random}/>
+        </Link>
+      ) : null
+    }
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
